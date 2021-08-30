@@ -15,7 +15,7 @@ struct ContentView: View {
             Text(date())
                 .padding()
             Button(action: {
-                store.dispatch(action: NextDayAction())
+                store.dispatch(action: IncrementDayAction())
             }) {
                 Text("Increment")
             }

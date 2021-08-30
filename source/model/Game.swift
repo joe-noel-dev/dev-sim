@@ -23,4 +23,9 @@ struct Game {
         staffIds.filter { people[$0] != nil }.map { people[$0]! }
     }
 
+    mutating func nextDay() {
+        let secondsInADay = 24.0 * 60.0 * 60.0
+        self.date += secondsInADay
+    }
+
 }

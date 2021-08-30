@@ -7,6 +7,11 @@
 
 import Foundation
 
-struct NextDayAction: Action {
+struct IncrementDayAction: Action {
+    let numDays: Int
 
+    init(numDays: Int = 1) {
+        assert(numDays > 0)
+        self.numDays = numDays
+    }
 }

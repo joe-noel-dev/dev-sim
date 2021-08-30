@@ -7,9 +7,13 @@
 
 import Foundation
 
-func nextDayReducer(state: State, action: Action) -> State {
+func incrementDayReducer(state: State, action: IncrementDayAction) -> State {
     var state = state
-    state.game.date += 24 * 60 * 60
+
+    for _ in 0..<action.numDays {
+        state.game.nextDay()
+    }
+
     return state
 }
 
@@ -17,8 +21,8 @@ func rootReducer(state: State, action: Action) -> State {
     var state = state
 
     switch action {
-    case _ as NextDayAction:
-        state = nextDayReducer(state: state, action: action)
+    case let incrementDayAction as IncrementDayAction:
+        state = incrementDayReducer(state: state, action: incrementDayAction)
     default:
         break
     }
