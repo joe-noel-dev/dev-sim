@@ -13,8 +13,21 @@ class PeopleTests: XCTestCase {
 
     var store: Store? = nil
 
+    func dispatchAndWait(action: Action) {
+        let dispatchExpectation = self.expectation(description: "Dispatch action")
+
+        store!.dispatch(action: action)
+
+        DispatchQueue.main.async {
+            dispatchExpectation.fulfill()
+        }
+
+        wait(for: [dispatchExpectation], timeout: 5.0)
+    }
+
     override func setUpWithError() throws {
         store = Store(reducer: rootReducer)
+        dispatchAndWait(action: NewGameAction())
     }
 
     override func tearDownWithError() throws {

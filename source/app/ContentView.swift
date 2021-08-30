@@ -12,6 +12,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Text("Balance \(store.state.game.balance)").padding()
             Text(date())
                 .padding()
             Button(action: {

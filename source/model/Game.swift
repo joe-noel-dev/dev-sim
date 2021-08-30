@@ -7,25 +7,62 @@
 
 import Foundation
 
-struct Game {
-    var date = Date()
-    var people: [UUID: Person] = [:]
-    var staffIds: [UUID]
-
-    init() {
-        let developer = Person(withRole: .developer)
-        let po = Person(withRole: .productOwner)
-        self.people = [developer.id: developer, po.id: po]
-        self.staffIds = [developer.id, po.id]
-    }
+class Game {
+    var date = ISO8601DateFormatter().date(from: "2021-01-01T10:00:00+0000")!
+    private(set) var people: [UUID: Person] = [:]
+    private(set) var staffIds: [UUID] = []
+    private(set) var transactions: [Transaction] = []
 
     var staff: [Person] {
         staffIds.filter { people[$0] != nil }.map { people[$0]! }
     }
 
-    mutating func nextDay() {
+    var balance: Currency {
+        transactions.reduce(0, { total, transaction in total + transaction.amount })
+    }
+
+    func nextDay() {
         let secondsInADay = 24.0 * 60.0 * 60.0
         self.date += secondsInADay
+    }
+
+    func addTransaction(_ transaction: Transaction) {
+        self.transactions.append(transaction)
+    }
+
+    func addPerson(_ person: Person) {
+        self.people[person.id] = person
+    }
+
+    func updatePerson(_ person: Person) {
+        guard people[person.id] != nil else {
+            return
+        }
+
+        people[person.id] = person
+
+    }
+
+    func addStaffMember(_ id: UUID) {
+        assert(self.people[id] != nil)
+        self.staffIds.append(id)
+    }
+
+    func shouldProcessSalaries() -> Bool {
+        Calendar(identifier: .gregorian).component(.weekday, from: date) == 1
+    }
+
+    func processSalaries() {
+        guard shouldProcessSalaries() else {
+            return
+        }
+
+        let wageBill = staff.filter({ person in person.salary != nil }).reduce(
+            0, { value, person in value + person.salary! })
+
+        self.addTransaction(
+            Transaction(
+                type: .salary, timestamp: date, amount: -wageBill, description: "Weekly wage bill"))
     }
 
 }

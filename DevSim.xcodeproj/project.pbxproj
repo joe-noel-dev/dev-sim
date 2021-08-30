@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		74166E5F26DD3C54004F5DE1 /* PeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E5E26DD3C54004F5DE1 /* PeopleTests.swift */; };
 		74166E6126DD3D6D004F5DE1 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6026DD3D6D004F5DE1 /* Person.swift */; };
+		74166E6326DD5CEA004F5DE1 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6226DD5CEA004F5DE1 /* Transaction.swift */; };
+		74166E6526DD5D09004F5DE1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6426DD5D09004F5DE1 /* Currency.swift */; };
+		74166E6826DD5EC1004F5DE1 /* TransactionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6626DD5D72004F5DE1 /* TransactionTests.swift */; };
+		74166E6A26DD6214004F5DE1 /* GameActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6926DD6214004F5DE1 /* GameActions.swift */; };
+		74166E6C26DD6243004F5DE1 /* IncrementDayReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6B26DD6243004F5DE1 /* IncrementDayReducer.swift */; };
+		74166E6E26DD6252004F5DE1 /* NewGameReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E6D26DD6252004F5DE1 /* NewGameReducer.swift */; };
+		74166E7226DD8775004F5DE1 /* PersonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E7126DD8775004F5DE1 /* PersonActions.swift */; };
+		74166E7426DD87B5004F5DE1 /* UpdatePersonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */; };
+		74166E7726DD8D9F004F5DE1 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E7526DD8D23004F5DE1 /* GameTests.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
@@ -45,6 +54,15 @@
 /* Begin PBXFileReference section */
 		74166E5E26DD3C54004F5DE1 /* PeopleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTests.swift; sourceTree = "<group>"; };
 		74166E6026DD3D6D004F5DE1 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		74166E6226DD5CEA004F5DE1 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		74166E6426DD5D09004F5DE1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		74166E6626DD5D72004F5DE1 /* TransactionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTests.swift; sourceTree = "<group>"; };
+		74166E6926DD6214004F5DE1 /* GameActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActions.swift; sourceTree = "<group>"; };
+		74166E6B26DD6243004F5DE1 /* IncrementDayReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementDayReducer.swift; sourceTree = "<group>"; };
+		74166E6D26DD6252004F5DE1 /* NewGameReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGameReducer.swift; sourceTree = "<group>"; };
+		74166E7126DD8775004F5DE1 /* PersonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonActions.swift; sourceTree = "<group>"; };
+		74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePersonReducer.swift; sourceTree = "<group>"; };
+		74166E7526DD8D23004F5DE1 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -104,8 +122,11 @@
 		744E8B9B26DD213C008156A3 /* reducers */ = {
 			isa = PBXGroup;
 			children = (
+				74166E6B26DD6243004F5DE1 /* IncrementDayReducer.swift */,
+				74166E6D26DD6252004F5DE1 /* NewGameReducer.swift */,
 				744E8BA126DD2243008156A3 /* Reducer.swift */,
 				744E8B9C26DD214C008156A3 /* RootReducer.swift */,
+				74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */,
 			);
 			path = reducers;
 			sourceTree = "<group>";
@@ -114,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				744E8B9F26DD2215008156A3 /* Action.swift */,
+				74166E6926DD6214004F5DE1 /* GameActions.swift */,
+				74166E7126DD8775004F5DE1 /* PersonActions.swift */,
 				744E8BA626DD2744008156A3 /* TimeActions.swift */,
 			);
 			path = actions;
@@ -167,9 +190,11 @@
 		74B066EC26DD17E70096C555 /* tests */ = {
 			isa = PBXGroup;
 			children = (
+				744E8BA826DD2797008156A3 /* DateTests.swift */,
+				74166E7526DD8D23004F5DE1 /* GameTests.swift */,
 				7473088D26DD178800290241 /* Info.plist */,
 				74166E5E26DD3C54004F5DE1 /* PeopleTests.swift */,
-				744E8BA826DD2797008156A3 /* DateTests.swift */,
+				74166E6626DD5D72004F5DE1 /* TransactionTests.swift */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -194,8 +219,10 @@
 		74B066F426DD1A890096C555 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				74166E6426DD5D09004F5DE1 /* Currency.swift */,
 				74B066F526DD1A940096C555 /* Game.swift */,
 				74166E6026DD3D6D004F5DE1 /* Person.swift */,
+				74166E6226DD5CEA004F5DE1 /* Transaction.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -331,14 +358,21 @@
 			files = (
 				744E8B9A26DD20F8008156A3 /* Store.swift in Sources */,
 				74B066F626DD1A940096C555 /* Game.swift in Sources */,
+				74166E6326DD5CEA004F5DE1 /* Transaction.swift in Sources */,
 				744E8BA726DD2744008156A3 /* TimeActions.swift in Sources */,
+				74166E7426DD87B5004F5DE1 /* UpdatePersonReducer.swift in Sources */,
 				744E8BA426DD229D008156A3 /* State.swift in Sources */,
 				74166E6126DD3D6D004F5DE1 /* Person.swift in Sources */,
 				7473087C26DD178600290241 /* ContentView.swift in Sources */,
 				74B066F026DD1A570096C555 /* GameView.swift in Sources */,
+				74166E7226DD8775004F5DE1 /* PersonActions.swift in Sources */,
+				74166E6526DD5D09004F5DE1 /* Currency.swift in Sources */,
 				744E8BA226DD2243008156A3 /* Reducer.swift in Sources */,
 				744E8BA026DD2215008156A3 /* Action.swift in Sources */,
+				74166E6A26DD6214004F5DE1 /* GameActions.swift in Sources */,
 				7473087A26DD178600290241 /* DevSimApp.swift in Sources */,
+				74166E6E26DD6252004F5DE1 /* NewGameReducer.swift in Sources */,
+				74166E6C26DD6243004F5DE1 /* IncrementDayReducer.swift in Sources */,
 				744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +382,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				744E8BA926DD2797008156A3 /* DateTests.swift in Sources */,
+				74166E6826DD5EC1004F5DE1 /* TransactionTests.swift in Sources */,
 				74166E5F26DD3C54004F5DE1 /* PeopleTests.swift in Sources */,
+				74166E7726DD8D9F004F5DE1 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
