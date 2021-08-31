@@ -15,7 +15,7 @@ enum PersonRole {
 struct Person {
     let id: UUID = UUID()
     let role: PersonRole
-    var salary: Currency? = 10
+    var weeklySalary: Currency? = 10
 
     init(role: PersonRole) {
         self.role = role

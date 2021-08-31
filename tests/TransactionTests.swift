@@ -50,7 +50,7 @@ class TransactionTests: XCTestCase {
         let people = store!.state.game.staff
         for person in people {
             var person = person
-            person.salary = individualSalary
+            person.weeklySalary = individualSalary
             totalSalary += individualSalary
             dispatchAndWait(action: UpdatePersonAction(person: person))
         }

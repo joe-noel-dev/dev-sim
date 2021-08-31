@@ -57,8 +57,8 @@ class Game {
             return
         }
 
-        let wageBill = staff.filter({ person in person.salary != nil }).reduce(
-            0, { value, person in value + person.salary! })
+        let wageBill = staff.filter({ person in person.weeklySalary != nil }).reduce(
+            0, { value, person in value + person.weeklySalary! })
 
         self.addTransaction(
             Transaction(
