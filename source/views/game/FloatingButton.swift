@@ -12,16 +12,11 @@ struct FloatingButton: View {
     let name: String
 
     var body: some View {
-        Button {
-            print("Clicked \(name)")
-        } label: {
-
-            Text(name)
-                .padding()
-                .background(Circle().fill(Color("Secondary")))
-                .foregroundColor(Color("TextOnSecondary"))
-                .shadow(radius: 2)
-        }
+        Text(name)
+            .padding()
+            .background(Circle().fill(Color("Secondary")))
+            .foregroundColor(Color("TextOnSecondary"))
+            .shadow(radius: 2)
     }
 }
 

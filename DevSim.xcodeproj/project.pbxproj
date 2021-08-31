@@ -21,6 +21,7 @@
 		741730D426DEA72D00E9C68C /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730D326DEA72D00E9C68C /* BalanceView.swift */; };
 		741730D726DEADC300E9C68C /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730D626DEADC300E9C68C /* DateView.swift */; };
 		741730DC26DEC53E00E9C68C /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730DB26DEC53E00E9C68C /* FloatingButton.swift */; };
+		741730DE26DECC8100E9C68C /* TimerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730DD26DECC8100E9C68C /* TimerReducer.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
@@ -69,6 +70,7 @@
 		741730D326DEA72D00E9C68C /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		741730D626DEADC300E9C68C /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		741730DB26DEC53E00E9C68C /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		741730DD26DECC8100E9C68C /* TimerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerReducer.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				74166E6D26DD6252004F5DE1 /* NewGameReducer.swift */,
 				744E8BA126DD2243008156A3 /* Reducer.swift */,
 				744E8B9C26DD214C008156A3 /* RootReducer.swift */,
+				741730DD26DECC8100E9C68C /* TimerReducer.swift */,
 				74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */,
 			);
 			path = reducers;
@@ -399,6 +402,7 @@
 			files = (
 				741730D426DEA72D00E9C68C /* BalanceView.swift in Sources */,
 				744E8B9A26DD20F8008156A3 /* Store.swift in Sources */,
+				741730DE26DECC8100E9C68C /* TimerReducer.swift in Sources */,
 				741730DC26DEC53E00E9C68C /* FloatingButton.swift in Sources */,
 				74B066F626DD1A940096C555 /* Game.swift in Sources */,
 				74166E6326DD5CEA004F5DE1 /* Transaction.swift in Sources */,

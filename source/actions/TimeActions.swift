@@ -15,3 +15,9 @@ struct IncrementDayAction: Action {
         self.numDays = numDays
     }
 }
+
+struct StartTimerAction: Action {
+    let action: () -> Void
+}
+
+struct StopTimerAction: Action {}

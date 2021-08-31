@@ -11,7 +11,14 @@ struct GameView: View {
 
     @EnvironmentObject var store: Store
 
-    func leftChannelButtons() -> some View {
+    var body: some View {
+        ZStack {
+            leftChannelButtons()
+            dateView()
+        }
+    }
+
+    private func leftChannelButtons() -> some View {
         HStack {
             VStack(alignment: .leading, spacing: 16) {
                 BalanceView(balance: store.state.game.balance)
@@ -25,12 +32,12 @@ struct GameView: View {
         }
     }
 
-    func dateView() -> some View {
+    private func dateView() -> some View {
         HStack {
             Spacer()
             VStack(alignment: .leading) {
-                DateView(date: store.state.game.date) {
-                    store.dispatch(action: IncrementDayAction())
+                DateView(date: store.state.game.date).onTapGesture {
+                    onPressDate()
                 }
                 Spacer()
             }
@@ -38,10 +45,12 @@ struct GameView: View {
         }
     }
 
-    var body: some View {
-        ZStack {
-            leftChannelButtons()
-            dateView()
+    private func onPressDate() {
+        if store.state.timer == nil {
+            store.dispatch(
+                action: StartTimerAction(action: { store.dispatch(action: IncrementDayAction()) }))
+        } else {
+            store.dispatch(action: StopTimerAction())
         }
     }
 }

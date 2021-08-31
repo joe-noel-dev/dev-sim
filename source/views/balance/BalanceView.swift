@@ -9,11 +9,7 @@ import SwiftUI
 
 struct BalanceView: View {
     let balance: Currency
-
-    init(balance: Currency) {
-        self.balance = balance
-    }
-
+    
     var body: some View {
         Text("💰 \(balance)")
             .padding()
