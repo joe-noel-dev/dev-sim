@@ -49,7 +49,7 @@ class Game {
     }
 
     func shouldProcessSalaries() -> Bool {
-        Calendar(identifier: .gregorian).component(.weekday, from: date) == 1
+        Calendar(identifier: .gregorian).component(.weekday, from: date) == 2
     }
 
     func processSalaries() {

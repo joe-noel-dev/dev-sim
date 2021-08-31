@@ -55,7 +55,7 @@ class TransactionTests: XCTestCase {
             dispatchAndWait(action: UpdatePersonAction(person: person))
         }
 
-        while dayOfWeek() != 7 {
+        while dayOfWeek() != 1 {
             nextDay()
         }
 
