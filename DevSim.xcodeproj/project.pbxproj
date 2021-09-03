@@ -18,10 +18,11 @@
 		74166E7226DD8775004F5DE1 /* PersonActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E7126DD8775004F5DE1 /* PersonActions.swift */; };
 		74166E7426DD87B5004F5DE1 /* UpdatePersonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */; };
 		74166E7726DD8D9F004F5DE1 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74166E7526DD8D23004F5DE1 /* GameTests.swift */; };
-		741730D426DEA72D00E9C68C /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730D326DEA72D00E9C68C /* BalanceView.swift */; };
 		741730D726DEADC300E9C68C /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730D626DEADC300E9C68C /* DateView.swift */; };
 		741730DC26DEC53E00E9C68C /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730DB26DEC53E00E9C68C /* FloatingButton.swift */; };
 		741730DE26DECC8100E9C68C /* TimerReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730DD26DECC8100E9C68C /* TimerReducer.swift */; };
+		741730E126E00D0100E9C68C /* OfficeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730E026E00D0100E9C68C /* OfficeView.swift */; };
+		7445191B26E2C4C900615A20 /* DisplayUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445191A26E2C4C900615A20 /* DisplayUnits.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
@@ -67,10 +68,11 @@
 		74166E7126DD8775004F5DE1 /* PersonActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonActions.swift; sourceTree = "<group>"; };
 		74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePersonReducer.swift; sourceTree = "<group>"; };
 		74166E7526DD8D23004F5DE1 /* GameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
-		741730D326DEA72D00E9C68C /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
 		741730D626DEADC300E9C68C /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		741730DB26DEC53E00E9C68C /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		741730DD26DECC8100E9C68C /* TimerReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerReducer.swift; sourceTree = "<group>"; };
+		741730E026E00D0100E9C68C /* OfficeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeView.swift; sourceTree = "<group>"; };
+		7445191A26E2C4C900615A20 /* DisplayUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayUnits.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -121,26 +123,11 @@
 		741730CF26DEA67800E9C68C /* game */ = {
 			isa = PBXGroup;
 			children = (
+				741730D626DEADC300E9C68C /* DateView.swift */,
 				741730DB26DEC53E00E9C68C /* FloatingButton.swift */,
 				74B066EF26DD1A570096C555 /* GameView.swift */,
 			);
 			path = game;
-			sourceTree = "<group>";
-		};
-		741730D026DEA68300E9C68C /* balance */ = {
-			isa = PBXGroup;
-			children = (
-				741730D326DEA72D00E9C68C /* BalanceView.swift */,
-			);
-			path = balance;
-			sourceTree = "<group>";
-		};
-		741730D526DEADB700E9C68C /* date */ = {
-			isa = PBXGroup;
-			children = (
-				741730D626DEADC300E9C68C /* DateView.swift */,
-			);
-			path = date;
 			sourceTree = "<group>";
 		};
 		741730D826DEB2DB00E9C68C /* constants */ = {
@@ -148,6 +135,22 @@
 			children = (
 			);
 			path = constants;
+			sourceTree = "<group>";
+		};
+		741730DF26E00CF300E9C68C /* office */ = {
+			isa = PBXGroup;
+			children = (
+				741730E026E00D0100E9C68C /* OfficeView.swift */,
+			);
+			path = office;
+			sourceTree = "<group>";
+		};
+		7445191926E2C4BE00615A20 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				7445191A26E2C4C900615A20 /* DisplayUnits.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		744E8B9826DD20EF008156A3 /* store */ = {
@@ -206,6 +209,7 @@
 		74B066EA26DD17AE0096C555 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				7445191926E2C4BE00615A20 /* utils */,
 				741730D826DEB2DB00E9C68C /* constants */,
 				744E8B9E26DD2208008156A3 /* actions */,
 				744E8B9B26DD213C008156A3 /* reducers */,
@@ -253,8 +257,7 @@
 		74B066EE26DD1A220096C555 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				741730D526DEADB700E9C68C /* date */,
-				741730D026DEA68300E9C68C /* balance */,
+				741730DF26E00CF300E9C68C /* office */,
 				741730CF26DEA67800E9C68C /* game */,
 			);
 			path = views;
@@ -400,8 +403,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				741730D426DEA72D00E9C68C /* BalanceView.swift in Sources */,
 				744E8B9A26DD20F8008156A3 /* Store.swift in Sources */,
+				7445191B26E2C4C900615A20 /* DisplayUnits.swift in Sources */,
+				741730E126E00D0100E9C68C /* OfficeView.swift in Sources */,
 				741730DE26DECC8100E9C68C /* TimerReducer.swift in Sources */,
 				741730DC26DEC53E00E9C68C /* FloatingButton.swift in Sources */,
 				74B066F626DD1A940096C555 /* Game.swift in Sources */,

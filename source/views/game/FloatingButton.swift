@@ -7,21 +7,23 @@
 
 import SwiftUI
 
-struct FloatingButton: View {
+struct FloatingButton: ViewModifier {
 
-    let name: String
-
-    var body: some View {
-        Text(name)
-            .padding()
-            .background(Circle().fill(Color("Secondary")))
-            .foregroundColor(Color("TextOnSecondary"))
+    func body(content: Content) -> some View {
+        content
+            .padding(displayUnits(2))
+            .frame(height: displayUnits(6))
+            .background(
+                Color("FloatingButtonBackground")
+            )
+            .cornerRadius(displayUnits(0.5))
             .shadow(radius: 2)
+
     }
 }
 
-struct FloatingButton_Previews: PreviewProvider {
-    static var previews: some View {
-        FloatingButton(name: "P").previewLayout(.sizeThatFits)
+extension View {
+    func floatingButton() -> some View {
+        self.modifier(FloatingButton())
     }
 }

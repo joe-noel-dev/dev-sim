@@ -12,37 +12,72 @@ struct GameView: View {
     @EnvironmentObject var store: Store
 
     var body: some View {
+
         ZStack {
-            leftChannelButtons()
-            dateView()
-        }
+            leftChannel()
+            rightChannel()
+            OfficeView()
+
+        }.foregroundColor(.white)
+
     }
 
-    private func leftChannelButtons() -> some View {
+    private func leftChannel() -> some View {
         HStack {
-            VStack(alignment: .leading, spacing: 16) {
-                BalanceView(balance: store.state.game.balance)
-                FloatingButton(name: "📜")
-                FloatingButton(name: "🗞")
-                FloatingButton(name: "👨‍👩‍👧‍👦")
+            VStack(alignment: .leading, spacing: displayUnits(2)) {
+                Image("Policy").floatingButton()
+                Image("Mail").floatingButton()
+                Image("People").floatingButton()
                 Spacer()
+                HStack(spacing: displayUnits(1)) {
+                    Image("Calendar")
+                    DateView(date: store.state.game.date)
+                    store.state.timer == nil ? Image("Play") : Image("Pause")
+
+                }.floatingButton()
+                    .onTapGesture {
+                        onPressDate()
+                    }
             }
             .padding([.leading])
             Spacer()
-        }
+        }.padding(16.0)
     }
 
-    private func dateView() -> some View {
-        HStack {
+    private func rightChannel() -> some View {
+        typealias IconValue = (String, String)
+        let topIcons = [
+            ("Money", "\(store.state.game.balance)"),
+            ("Price", "10"),
+        ]
+        
+        let bottomIcons = [
+            ("Customers", "0"),
+            ("Bugs", "0"),
+            ("Features", "0"),
+            ("Quality", "100%"),
+        ]
+
+        return HStack {
             Spacer()
-            VStack(alignment: .leading) {
-                DateView(date: store.state.game.date).onTapGesture {
-                    onPressDate()
+            VStack(alignment: .trailing, spacing: 16) {
+                ForEach(topIcons, id: \.0) { (iconName, value) in
+                    HStack(spacing: displayUnits(1)) {
+                        Image(iconName)
+                        Text(value)
+                    }.floatingButton()
                 }
+
                 Spacer()
+                
+                ForEach(bottomIcons, id: \.0) { (iconName, value) in
+                    HStack(spacing: displayUnits(1)) {
+                        Image(iconName)
+                        Text(value)
+                    }.floatingButton()
+                }
             }
-            Spacer()
-        }
+        }.padding(16.0)
     }
 
     private func onPressDate() {
@@ -60,6 +95,8 @@ struct GameView_Previews: PreviewProvider {
         ZStack {
             Color("AppBackground").ignoresSafeArea()
             GameView().environmentObject(store)
-        }
+        }.previewLayout(.fixed(width: 2532 / 3.0, height: 1170 / 3.0))
+            .environment(\.horizontalSizeClass, .regular)
+            .environment(\.verticalSizeClass, .compact)
     }
 }

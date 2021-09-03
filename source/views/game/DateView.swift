@@ -12,7 +12,6 @@ struct DateView: View {
 
     var body: some View {
         Text(formattedDate())
-            .padding()
     }
 
     private func formattedDate() -> String {
