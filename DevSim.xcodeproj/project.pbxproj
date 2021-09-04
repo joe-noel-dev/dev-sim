@@ -28,6 +28,7 @@
 		7445192B26E3A3E100615A20 /* PersonBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192A26E3A3E100615A20 /* PersonBlob.swift */; };
 		7445192E26E3AA2D00615A20 /* PeopleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192D26E3AA2D00615A20 /* PeopleSheet.swift */; };
 		7445193026E3BFD500615A20 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192F26E3BFD500615A20 /* Name.swift */; };
+		7445193226E3FD6A00615A20 /* PersonListEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445193126E3FD6A00615A20 /* PersonListEntryView.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
@@ -83,6 +84,7 @@
 		7445192A26E3A3E100615A20 /* PersonBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBlob.swift; sourceTree = "<group>"; };
 		7445192D26E3AA2D00615A20 /* PeopleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSheet.swift; sourceTree = "<group>"; };
 		7445192F26E3BFD500615A20 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
+		7445193126E3FD6A00615A20 /* PersonListEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListEntryView.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				7445192D26E3AA2D00615A20 /* PeopleSheet.swift */,
+				7445193126E3FD6A00615A20 /* PersonListEntryView.swift */,
 			);
 			path = people;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				74166E6A26DD6214004F5DE1 /* GameActions.swift in Sources */,
 				7473087A26DD178600290241 /* DevSimApp.swift in Sources */,
 				74166E6E26DD6252004F5DE1 /* NewGameReducer.swift in Sources */,
+				7445193226E3FD6A00615A20 /* PersonListEntryView.swift in Sources */,
 				74166E6C26DD6243004F5DE1 /* IncrementDayReducer.swift in Sources */,
 				744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */,
 			);

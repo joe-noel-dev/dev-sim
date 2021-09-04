@@ -10,6 +10,13 @@ import Foundation
 enum PersonRole {
     case productOwner
     case developer
+    
+    var description: String {
+        switch self {
+            case .productOwner: return "Product Owner"
+            case .developer: return "Developer"
+        }
+    }
 }
 
 struct Person {

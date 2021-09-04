@@ -28,8 +28,7 @@ struct PeopleSheet: View {
 
             ScrollView {
                 ForEach(Array(store.state.game.people.keys), id: \.self) { id in
-                    Text(store.state.game.people[id]!.fullName)
-                        .padding()
+                    PersonListEntryView(person: store.state.game.people[id]!)
                 }
             }
 
