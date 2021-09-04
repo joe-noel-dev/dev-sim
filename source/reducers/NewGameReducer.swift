@@ -19,6 +19,12 @@ func newGameReducer(state: AppState) -> AppState {
     game.addPerson(po)
     game.addStaffMember(po.id)
 
+    (Person.generate(numPeople: 60, withRole: .developer)
+        + Person.generate(numPeople: 20, withRole: .productOwner))
+        .forEach({ person in
+            game.addPerson(person)
+        })
+
     game.addTransaction(
         Transaction(type: .loan, timestamp: game.date, amount: 10000, description: "Bank loan"))
 

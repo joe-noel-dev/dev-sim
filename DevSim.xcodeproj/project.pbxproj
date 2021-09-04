@@ -26,6 +26,8 @@
 		7445192726E2EE2700615A20 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192626E2EE2700615A20 /* Middleware.swift */; };
 		7445192926E37DAF00615A20 /* DeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192826E37DAF00615A20 /* DeskView.swift */; };
 		7445192B26E3A3E100615A20 /* PersonBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192A26E3A3E100615A20 /* PersonBlob.swift */; };
+		7445192E26E3AA2D00615A20 /* PeopleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192D26E3AA2D00615A20 /* PeopleSheet.swift */; };
+		7445193026E3BFD500615A20 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192F26E3BFD500615A20 /* Name.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
@@ -79,6 +81,8 @@
 		7445192626E2EE2700615A20 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
 		7445192826E37DAF00615A20 /* DeskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskView.swift; sourceTree = "<group>"; };
 		7445192A26E3A3E100615A20 /* PersonBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBlob.swift; sourceTree = "<group>"; };
+		7445192D26E3AA2D00615A20 /* PeopleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSheet.swift; sourceTree = "<group>"; };
+		7445192F26E3BFD500615A20 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -168,6 +172,14 @@
 				7445192626E2EE2700615A20 /* Middleware.swift */,
 			);
 			path = middleware;
+			sourceTree = "<group>";
+		};
+		7445192C26E3AA1E00615A20 /* people */ = {
+			isa = PBXGroup;
+			children = (
+				7445192D26E3AA2D00615A20 /* PeopleSheet.swift */,
+			);
+			path = people;
 			sourceTree = "<group>";
 		};
 		744E8B9826DD20EF008156A3 /* store */ = {
@@ -274,6 +286,7 @@
 		74B066EE26DD1A220096C555 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7445192C26E3AA1E00615A20 /* people */,
 				741730DF26E00CF300E9C68C /* office */,
 				741730CF26DEA67800E9C68C /* game */,
 			);
@@ -287,6 +300,7 @@
 				74B066F526DD1A940096C555 /* Game.swift */,
 				74166E6026DD3D6D004F5DE1 /* Person.swift */,
 				74166E6226DD5CEA004F5DE1 /* Transaction.swift */,
+				7445192F26E3BFD500615A20 /* Name.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -422,10 +436,12 @@
 			files = (
 				744E8B9A26DD20F8008156A3 /* Store.swift in Sources */,
 				7445191B26E2C4C900615A20 /* DisplayUnits.swift in Sources */,
+				7445193026E3BFD500615A20 /* Name.swift in Sources */,
 				741730E126E00D0100E9C68C /* OfficeView.swift in Sources */,
 				741730DE26DECC8100E9C68C /* GameTimer.swift in Sources */,
 				741730DC26DEC53E00E9C68C /* FloatingButton.swift in Sources */,
 				74B066F626DD1A940096C555 /* Game.swift in Sources */,
+				7445192E26E3AA2D00615A20 /* PeopleSheet.swift in Sources */,
 				7445192926E37DAF00615A20 /* DeskView.swift in Sources */,
 				74166E6326DD5CEA004F5DE1 /* Transaction.swift in Sources */,
 				744E8BA726DD2744008156A3 /* TimeActions.swift in Sources */,

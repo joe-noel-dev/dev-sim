@@ -11,6 +11,8 @@ struct GameView: View {
 
     @EnvironmentObject var store: Store
 
+    @State private var peopleSheet = false
+
     var body: some View {
         ZStack {
             leftChannel()
@@ -99,8 +101,15 @@ struct GameView: View {
             FloatingButton {
                 Image("Mail")
             }
-            FloatingButton {
-                Image("People")
+
+            Button {
+                peopleSheet.toggle()
+            } label: {
+                FloatingButton {
+                    Image("People")
+                }.sheet(isPresented: $peopleSheet) {
+                    PeopleSheet()
+                }
             }
         }
 
