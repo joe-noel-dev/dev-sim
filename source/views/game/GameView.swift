@@ -41,7 +41,7 @@ struct GameView: View {
             }
             .padding([.leading])
             Spacer()
-        }.padding(16.0)
+        }.padding(displayUnits(2))
     }
 
     private func rightChannel() -> some View {
