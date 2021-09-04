@@ -32,7 +32,7 @@ struct GameView: View {
                 HStack(spacing: displayUnits(1)) {
                     Image("Calendar")
                     DateView(date: store.state.game.date)
-                    store.state.timer == nil ? Image("Play") : Image("Pause")
+                    store.state.timerRunning ? Image("Pause") : Image("Play")
 
                 }.floatingButton()
                     .onTapGesture {
@@ -50,7 +50,7 @@ struct GameView: View {
             ("Money", "\(store.state.game.balance)"),
             ("Price", "10"),
         ]
-        
+
         let bottomIcons = [
             ("Customers", "0"),
             ("Bugs", "0"),
@@ -69,7 +69,7 @@ struct GameView: View {
                 }
 
                 Spacer()
-                
+
                 ForEach(bottomIcons, id: \.0) { (iconName, value) in
                     HStack(spacing: displayUnits(1)) {
                         Image(iconName)
@@ -81,12 +81,7 @@ struct GameView: View {
     }
 
     private func onPressDate() {
-        if store.state.timer == nil {
-            store.dispatch(
-                action: StartTimerAction(action: { store.dispatch(action: IncrementDayAction()) }))
-        } else {
-            store.dispatch(action: StopTimerAction())
-        }
+        store.dispatch(store.state.timerRunning ? StopTimerAction() : StartTimerAction())
     }
 }
 

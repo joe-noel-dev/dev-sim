@@ -9,5 +9,5 @@ import Foundation
 
 struct State {
     var game = Game()
-    var timer: Timer? = nil
+    var timerRunning: Bool = false
 }

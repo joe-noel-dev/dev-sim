@@ -1,12 +1,12 @@
 import SwiftUI
 
-let store = Store(reducer: rootReducer)
+let store = Store(reducer: rootReducer, state: State(), middlewares: [GameTimer()])
 
 @main
 struct DevSimApp: App {
 
     init() {
-        store.dispatch(action: NewGameAction())
+        store.dispatch(NewGameAction())
     }
 
     var body: some Scene {

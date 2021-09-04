@@ -17,10 +17,10 @@ func rootReducer(state: State, action: Action) -> State {
         state = newGameReducer(state: state)
     case let updatePersonAction as UpdatePersonAction:
         state = updatePersonReducer(state: state, action: updatePersonAction)
-    case let startTimerAction as StartTimerAction:
-        state = startTimer(state: state, action: startTimerAction)
-    case _ as StopTimerAction:
-        state = stopTimer(state: state)
+    case _ as TimerStartedAction:
+        state.timerRunning = true
+    case _ as TimerStoppedAction:
+        state.timerRunning = false
     default:
         break
     }

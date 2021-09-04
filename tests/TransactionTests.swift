@@ -16,7 +16,7 @@ class TransactionTests: XCTestCase {
     func dispatchAndWait(action: Action) {
         let dispatchExpectation = self.expectation(description: "Dispatch action")
 
-        store!.dispatch(action: action)
+        store!.dispatch(action)
 
         DispatchQueue.main.async {
             dispatchExpectation.fulfill()
@@ -26,7 +26,7 @@ class TransactionTests: XCTestCase {
     }
 
     override func setUpWithError() throws {
-        store = Store(reducer: rootReducer)
+        store = Store(reducer: rootReducer, state: State(), middlewares: [])
         dispatchAndWait(action: NewGameAction())
     }
 

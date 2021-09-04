@@ -16,8 +16,7 @@ struct IncrementDayAction: Action {
     }
 }
 
-struct StartTimerAction: Action {
-    let action: () -> Void
-}
-
+struct StartTimerAction: Action {}
 struct StopTimerAction: Action {}
+struct TimerStartedAction: Action {}
+struct TimerStoppedAction: Action {}
