@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct State {
+struct AppState {
     var game = Game()
     var timer: Timer? = nil
 

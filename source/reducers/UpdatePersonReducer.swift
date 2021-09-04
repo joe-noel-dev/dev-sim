@@ -7,7 +7,7 @@
 
 import Foundation
 
-func updatePersonReducer(state: State, action: UpdatePersonAction) -> State {
+func updatePersonReducer(state: AppState, action: UpdatePersonAction) -> AppState {
     state.game.updatePerson(action.person)
     return state
 }

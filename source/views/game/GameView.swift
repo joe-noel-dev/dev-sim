@@ -12,32 +12,20 @@ struct GameView: View {
     @EnvironmentObject var store: Store
 
     var body: some View {
-
         ZStack {
             leftChannel()
             rightChannel()
             OfficeView()
 
         }.foregroundColor(.white)
-
     }
 
     private func leftChannel() -> some View {
         HStack {
             VStack(alignment: .leading, spacing: displayUnits(2)) {
-                Image("Policy").floatingButton()
-                Image("Mail").floatingButton()
-                Image("People").floatingButton()
+                actionIcons()
                 Spacer()
-                HStack(spacing: displayUnits(1)) {
-                    Image("Calendar")
-                    DateView(date: store.state.game.date)
-                    store.state.timerRunning ? Image("Pause") : Image("Play")
-
-                }.floatingButton()
-                    .onTapGesture {
-                        onPressDate()
-                    }
+                moneyIcons()
             }
             .padding([.leading])
             Spacer()
@@ -45,39 +33,77 @@ struct GameView: View {
     }
 
     private func rightChannel() -> some View {
-        typealias IconValue = (String, String)
-        let topIcons = [
-            ("Money", "\(store.state.game.balance)"),
-            ("Price", "10"),
-        ]
+        HStack {
+            Spacer()
+            VStack(alignment: .trailing, spacing: displayUnits(2)) {
+                calendarButton()
+                Spacer()
+                statusIcons()
+            }
+        }.padding(displayUnits(2))
+    }
 
-        let bottomIcons = [
+    private func calendarButton() -> some View {
+        FloatingButton {
+            HStack(spacing: displayUnits(1)) {
+                Image("Calendar")
+                DateView(date: store.state.game.date)
+                store.state.timerRunning ? Image("Pause") : Image("Play")
+
+            }.onTapGesture {
+                onPressDate()
+            }
+        }
+    }
+
+    private func statusIcons() -> some View {
+        let statusIcons = [
             ("Customers", "0"),
             ("Bugs", "0"),
             ("Features", "0"),
             ("Quality", "100%"),
         ]
 
-        return HStack {
-            Spacer()
-            VStack(alignment: .trailing, spacing: 16) {
-                ForEach(topIcons, id: \.0) { (iconName, value) in
-                    HStack(spacing: displayUnits(1)) {
-                        Image(iconName)
-                        Text(value)
-                    }.floatingButton()
-                }
-
-                Spacer()
-
-                ForEach(bottomIcons, id: \.0) { (iconName, value) in
-                    HStack(spacing: displayUnits(1)) {
-                        Image(iconName)
-                        Text(value)
-                    }.floatingButton()
+        return ForEach(statusIcons, id: \.0) { (iconName, value) in
+            FloatingButton {
+                HStack(spacing: displayUnits(1)) {
+                    Image(iconName)
+                    Text(value)
                 }
             }
-        }.padding(16.0)
+        }
+    }
+
+    private func moneyIcons() -> some View {
+        let topIcons = [
+            ("Money", "\(store.state.game.balance)"),
+            ("Price", "10"),
+        ]
+
+        return ForEach(topIcons, id: \.0) { (iconName, value) in
+            FloatingButton {
+                HStack(spacing: displayUnits(1)) {
+                    Image(iconName)
+                    Text(value)
+                }
+            }
+
+        }
+    }
+
+    private func actionIcons() -> some View {
+        Group {
+            FloatingButton {
+                Image("Policy")
+            }
+            FloatingButton {
+                Image("Mail")
+            }
+            FloatingButton {
+                Image("People")
+            }
+        }
+
     }
 
     private func onPressDate() {
@@ -87,11 +113,20 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        ZStack {
-            Color("AppBackground").ignoresSafeArea()
-            GameView().environmentObject(store)
-        }.previewLayout(.fixed(width: 2532 / 3.0, height: 1170 / 3.0))
-            .environment(\.horizontalSizeClass, .regular)
-            .environment(\.verticalSizeClass, .compact)
+
+        Group {
+            ZStack {
+                Color("AppBackground").ignoresSafeArea()
+                GameView().environmentObject(store)
+            }
+        }
+
+        Group {
+            ZStack {
+                Color("AppBackground").ignoresSafeArea()
+                GameView().environmentObject(store)
+            }
+        }
+        .previewDevice("iPad Air (4th generation)")
     }
 }

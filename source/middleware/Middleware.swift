@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Middleware {
-    mutating func execute(state: State, action: Action, dispatch: @escaping (Action) -> Void)
+    mutating func execute(state: AppState, action: Action, dispatch: @escaping (Action) -> Void)
 }

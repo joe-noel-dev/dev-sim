@@ -24,11 +24,13 @@
 		741730E126E00D0100E9C68C /* OfficeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741730E026E00D0100E9C68C /* OfficeView.swift */; };
 		7445191B26E2C4C900615A20 /* DisplayUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445191A26E2C4C900615A20 /* DisplayUnits.swift */; };
 		7445192726E2EE2700615A20 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192626E2EE2700615A20 /* Middleware.swift */; };
+		7445192926E37DAF00615A20 /* DeskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192826E37DAF00615A20 /* DeskView.swift */; };
+		7445192B26E3A3E100615A20 /* PersonBlob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192A26E3A3E100615A20 /* PersonBlob.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
 		744E8BA226DD2243008156A3 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8BA126DD2243008156A3 /* Reducer.swift */; };
-		744E8BA426DD229D008156A3 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8BA326DD229D008156A3 /* State.swift */; };
+		744E8BA426DD229D008156A3 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8BA326DD229D008156A3 /* AppState.swift */; };
 		744E8BA726DD2744008156A3 /* TimeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8BA626DD2744008156A3 /* TimeActions.swift */; };
 		744E8BA926DD2797008156A3 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8BA826DD2797008156A3 /* DateTests.swift */; };
 		7473087A26DD178600290241 /* DevSimApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7473087926DD178600290241 /* DevSimApp.swift */; };
@@ -75,11 +77,13 @@
 		741730E026E00D0100E9C68C /* OfficeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfficeView.swift; sourceTree = "<group>"; };
 		7445191A26E2C4C900615A20 /* DisplayUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayUnits.swift; sourceTree = "<group>"; };
 		7445192626E2EE2700615A20 /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		7445192826E37DAF00615A20 /* DeskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskView.swift; sourceTree = "<group>"; };
+		7445192A26E3A3E100615A20 /* PersonBlob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonBlob.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		744E8BA126DD2243008156A3 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
-		744E8BA326DD229D008156A3 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		744E8BA326DD229D008156A3 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		744E8BA626DD2744008156A3 /* TimeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeActions.swift; sourceTree = "<group>"; };
 		744E8BA826DD2797008156A3 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		7473087626DD178600290241 /* DevSim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevSim.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +146,9 @@
 		741730DF26E00CF300E9C68C /* office */ = {
 			isa = PBXGroup;
 			children = (
+				7445192826E37DAF00615A20 /* DeskView.swift */,
 				741730E026E00D0100E9C68C /* OfficeView.swift */,
+				7445192A26E3A3E100615A20 /* PersonBlob.swift */,
 			);
 			path = office;
 			sourceTree = "<group>";
@@ -167,7 +173,7 @@
 		744E8B9826DD20EF008156A3 /* store */ = {
 			isa = PBXGroup;
 			children = (
-				744E8BA326DD229D008156A3 /* State.swift */,
+				744E8BA326DD229D008156A3 /* AppState.swift */,
 				744E8B9926DD20F8008156A3 /* Store.swift */,
 			);
 			path = store;
@@ -420,11 +426,13 @@
 				741730DE26DECC8100E9C68C /* GameTimer.swift in Sources */,
 				741730DC26DEC53E00E9C68C /* FloatingButton.swift in Sources */,
 				74B066F626DD1A940096C555 /* Game.swift in Sources */,
+				7445192926E37DAF00615A20 /* DeskView.swift in Sources */,
 				74166E6326DD5CEA004F5DE1 /* Transaction.swift in Sources */,
 				744E8BA726DD2744008156A3 /* TimeActions.swift in Sources */,
+				7445192B26E3A3E100615A20 /* PersonBlob.swift in Sources */,
 				74166E7426DD87B5004F5DE1 /* UpdatePersonReducer.swift in Sources */,
 				7445192726E2EE2700615A20 /* Middleware.swift in Sources */,
-				744E8BA426DD229D008156A3 /* State.swift in Sources */,
+				744E8BA426DD229D008156A3 /* AppState.swift in Sources */,
 				74166E6126DD3D6D004F5DE1 /* Person.swift in Sources */,
 				7473087C26DD178600290241 /* ContentView.swift in Sources */,
 				74B066F026DD1A570096C555 /* GameView.swift in Sources */,

@@ -9,7 +9,7 @@ import Foundation
 
 class GameTimer: Middleware {
 
-    func execute(state: State, action: Action, dispatch: @escaping (Action) -> Void) {
+    func execute(state: AppState, action: Action, dispatch: @escaping (Action) -> Void) {
         switch action {
         case _ as StartTimerAction:
 

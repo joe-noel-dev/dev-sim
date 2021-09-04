@@ -1,6 +1,6 @@
 import SwiftUI
 
-let store = Store(reducer: rootReducer, state: State(), middlewares: [GameTimer()])
+let store = Store(reducer: rootReducer, state: AppState(), middlewares: [GameTimer()])
 
 @main
 struct DevSimApp: App {

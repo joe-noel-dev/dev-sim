@@ -7,10 +7,16 @@
 
 import SwiftUI
 
-struct FloatingButton: ViewModifier {
+struct FloatingButton<Content: View>: View {
 
-    func body(content: Content) -> some View {
-        content
+    let content: () -> Content
+
+    init(_ content: @escaping () -> Content) {
+        self.content = content
+    }
+
+    var body: some View {
+        content()
             .padding(displayUnits(2))
             .frame(height: displayUnits(6))
             .background(
@@ -18,12 +24,6 @@ struct FloatingButton: ViewModifier {
             )
             .cornerRadius(displayUnits(0.5))
             .shadow(radius: 2)
-
     }
-}
 
-extension View {
-    func floatingButton() -> some View {
-        self.modifier(FloatingButton())
-    }
 }

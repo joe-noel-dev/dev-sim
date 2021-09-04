@@ -7,4 +7,4 @@
 
 import Foundation
 
-typealias Reducer = (State, Action) -> State
+typealias Reducer = (AppState, Action) -> AppState

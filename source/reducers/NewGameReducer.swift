@@ -7,7 +7,7 @@
 
 import Foundation
 
-func newGameReducer(state: State) -> State {
+func newGameReducer(state: AppState) -> AppState {
     var state = state
     let game = Game()
 

@@ -9,10 +9,10 @@ import Foundation
 
 class Store: ObservableObject {
     let reducer: Reducer
-    @Published private(set) var state: State
+    @Published private(set) var state: AppState
     let middlewares: [Middleware]
 
-    init(reducer: @escaping Reducer, state: State, middlewares: [Middleware]) {
+    init(reducer: @escaping Reducer, state: AppState, middlewares: [Middleware]) {
         self.reducer = reducer
         self.state = state
         self.middlewares = middlewares

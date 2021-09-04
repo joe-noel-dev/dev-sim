@@ -7,7 +7,7 @@
 
 import Foundation
 
-func rootReducer(state: State, action: Action) -> State {
+func rootReducer(state: AppState, action: Action) -> AppState {
     var state = state
 
     switch action {

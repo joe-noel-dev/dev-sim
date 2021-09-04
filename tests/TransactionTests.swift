@@ -26,7 +26,7 @@ class TransactionTests: XCTestCase {
     }
 
     override func setUpWithError() throws {
-        store = Store(reducer: rootReducer, state: State(), middlewares: [])
+        store = Store(reducer: rootReducer, state: AppState(), middlewares: [])
         dispatchAndWait(action: NewGameAction())
     }
 

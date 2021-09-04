@@ -7,7 +7,7 @@
 
 import Foundation
 
-func incrementDayReducer(state: State, action: IncrementDayAction) -> State {
+func incrementDayReducer(state: AppState, action: IncrementDayAction) -> AppState {
     for _ in 0..<action.numDays {
         state.game.nextDay()
         state.game.processSalaries()
