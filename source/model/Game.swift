@@ -10,11 +10,11 @@ import Foundation
 class Game {
     var date = ISO8601DateFormatter().date(from: "2021-01-01T10:00:00+0000")!
     private(set) var people: [UUID: Person] = [:]
-    private(set) var staffIds: [UUID] = []
+    private(set) var employments: [Employment] = []
     private(set) var transactions: [Transaction] = []
 
-    var staff: [Person] {
-        staffIds.filter { people[$0] != nil }.map { people[$0]! }
+    var staff: [(Person, Employment)] {
+        employments.filter { people[$0.personId] != nil }.map { (people[$0.personId]!, $0) }
     }
 
     var balance: Currency {
@@ -44,8 +44,12 @@ class Game {
     }
 
     func addStaffMember(_ id: UUID) {
-        assert(self.people[id] != nil)
-        self.staffIds.append(id)
+        guard let person = people[id] else {
+            return
+        }
+
+        self.employments.append(
+            Employment(personId: person.id, salary: person.salaryExpectation, startDate: date))
     }
 
     func shouldProcessSalaries() -> Bool {
@@ -57,12 +61,22 @@ class Game {
             return
         }
 
-        let wageBill = staff.filter({ person in person.weeklySalary != nil }).reduce(
-            0, { value, person in value + person.weeklySalary! })
+        let wageBill = employments.reduce(
+            0, { value, employment in value + employment.salary })
 
         self.addTransaction(
             Transaction(
                 type: .salary, timestamp: date, amount: -wageBill, description: "Weekly wage bill"))
+    }
+
+    func isEmployed(personId: UUID) -> Bool {
+        employments.contains { employment in
+            employment.personId == personId
+        }
+    }
+
+    func isEmployed(person: Person) -> Bool {
+        isEmployed(personId: person.id)
     }
 
 }

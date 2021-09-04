@@ -10,3 +10,7 @@ import Foundation
 struct UpdatePersonAction: Action {
     let person: Person
 }
+
+struct HirePersonAction: Action {
+    let person: Person
+}

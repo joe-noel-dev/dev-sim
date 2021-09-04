@@ -16,24 +16,25 @@ struct PeopleSheet: View {
         VStack {
             HStack {
                 Spacer()
-                VStack (alignment: .trailing) {
-                    Button(action: {presentationMode.wrappedValue.dismiss()}) {
-                            Image("Cross").padding()
+                VStack(alignment: .trailing) {
+                    Button(action: { presentationMode.wrappedValue.dismiss() }) {
+                        Image("Cross").padding()
                     }
-                    
+
                 }
             }
-            
-            
 
             ScrollView {
                 ForEach(Array(store.state.game.people.keys), id: \.self) { id in
-                    PersonListEntryView(person: store.state.game.people[id]!)
+                    PersonListEntryView(
+                        person: store.state.game.people[id]!,
+                        employed: store.state.game.isEmployed(personId: id)
+                    ).environmentObject(store)
                 }
             }
 
         }.background(Color("ModalBackground"))
-        .foregroundColor(.white).edgesIgnoringSafeArea(.all)
+            .foregroundColor(.white).edgesIgnoringSafeArea(.all)
 
     }
 }

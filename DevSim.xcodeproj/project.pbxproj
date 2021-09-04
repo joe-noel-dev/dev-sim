@@ -29,6 +29,9 @@
 		7445192E26E3AA2D00615A20 /* PeopleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192D26E3AA2D00615A20 /* PeopleSheet.swift */; };
 		7445193026E3BFD500615A20 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445192F26E3BFD500615A20 /* Name.swift */; };
 		7445193226E3FD6A00615A20 /* PersonListEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445193126E3FD6A00615A20 /* PersonListEntryView.swift */; };
+		7445193426E4168900615A20 /* PersonRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445193326E4168900615A20 /* PersonRole.swift */; };
+		7445193826E4177700615A20 /* Employment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445193726E4177700615A20 /* Employment.swift */; };
+		7445193A26E41C3800615A20 /* HirePersonReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7445193926E41C3800615A20 /* HirePersonReducer.swift */; };
 		744E8B9A26DD20F8008156A3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9926DD20F8008156A3 /* Store.swift */; };
 		744E8B9D26DD214C008156A3 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9C26DD214C008156A3 /* RootReducer.swift */; };
 		744E8BA026DD2215008156A3 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744E8B9F26DD2215008156A3 /* Action.swift */; };
@@ -85,6 +88,9 @@
 		7445192D26E3AA2D00615A20 /* PeopleSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleSheet.swift; sourceTree = "<group>"; };
 		7445192F26E3BFD500615A20 /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		7445193126E3FD6A00615A20 /* PersonListEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListEntryView.swift; sourceTree = "<group>"; };
+		7445193326E4168900615A20 /* PersonRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonRole.swift; sourceTree = "<group>"; };
+		7445193726E4177700615A20 /* Employment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employment.swift; sourceTree = "<group>"; };
+		7445193926E41C3800615A20 /* HirePersonReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HirePersonReducer.swift; sourceTree = "<group>"; };
 		744E8B9926DD20F8008156A3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		744E8B9C26DD214C008156A3 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
 		744E8B9F26DD2215008156A3 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
@@ -202,6 +208,7 @@
 				744E8BA126DD2243008156A3 /* Reducer.swift */,
 				744E8B9C26DD214C008156A3 /* RootReducer.swift */,
 				74166E7326DD87B5004F5DE1 /* UpdatePersonReducer.swift */,
+				7445193926E41C3800615A20 /* HirePersonReducer.swift */,
 			);
 			path = reducers;
 			sourceTree = "<group>";
@@ -301,9 +308,11 @@
 			children = (
 				74166E6426DD5D09004F5DE1 /* Currency.swift */,
 				74B066F526DD1A940096C555 /* Game.swift */,
-				74166E6026DD3D6D004F5DE1 /* Person.swift */,
-				74166E6226DD5CEA004F5DE1 /* Transaction.swift */,
 				7445192F26E3BFD500615A20 /* Name.swift */,
+				74166E6026DD3D6D004F5DE1 /* Person.swift */,
+				7445193326E4168900615A20 /* PersonRole.swift */,
+				74166E6226DD5CEA004F5DE1 /* Transaction.swift */,
+				7445193726E4177700615A20 /* Employment.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -453,15 +462,18 @@
 				7445192726E2EE2700615A20 /* Middleware.swift in Sources */,
 				744E8BA426DD229D008156A3 /* AppState.swift in Sources */,
 				74166E6126DD3D6D004F5DE1 /* Person.swift in Sources */,
+				7445193426E4168900615A20 /* PersonRole.swift in Sources */,
 				7473087C26DD178600290241 /* ContentView.swift in Sources */,
 				74B066F026DD1A570096C555 /* GameView.swift in Sources */,
 				741730D726DEADC300E9C68C /* DateView.swift in Sources */,
+				7445193826E4177700615A20 /* Employment.swift in Sources */,
 				74166E7226DD8775004F5DE1 /* PersonActions.swift in Sources */,
 				74166E6526DD5D09004F5DE1 /* Currency.swift in Sources */,
 				744E8BA226DD2243008156A3 /* Reducer.swift in Sources */,
 				744E8BA026DD2215008156A3 /* Action.swift in Sources */,
 				74166E6A26DD6214004F5DE1 /* GameActions.swift in Sources */,
 				7473087A26DD178600290241 /* DevSimApp.swift in Sources */,
+				7445193A26E41C3800615A20 /* HirePersonReducer.swift in Sources */,
 				74166E6E26DD6252004F5DE1 /* NewGameReducer.swift in Sources */,
 				7445193226E3FD6A00615A20 /* PersonListEntryView.swift in Sources */,
 				74166E6C26DD6243004F5DE1 /* IncrementDayReducer.swift in Sources */,

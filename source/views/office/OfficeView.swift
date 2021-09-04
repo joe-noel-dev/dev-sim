@@ -36,7 +36,7 @@ struct OfficeView: View {
             DeskView()
                 .frame(width: deskSize.width, height: deskSize.height)
 
-            ForEach(Array(store.state.game.staff.enumerated()), id: \.1.id) {
+            ForEach(Array(store.state.game.staff.enumerated()), id: \.1.0.id) {
                 index, element in
                 PersonBlob()
                     .frame(width: Self.personWidth, height: Self.personWidth)

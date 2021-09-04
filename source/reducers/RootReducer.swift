@@ -17,6 +17,8 @@ func rootReducer(state: AppState, action: Action) -> AppState {
         state = newGameReducer(state: state)
     case let updatePersonAction as UpdatePersonAction:
         state = updatePersonReducer(state: state, action: updatePersonAction)
+    case let hirePersonAction as HirePersonAction:
+        state = hirePersonReducer(state: state, action: hirePersonAction)
     case let timerStartedAction as TimerStartedAction:
         state.timer = timerStartedAction.timer
     case _ as TimerStoppedAction:

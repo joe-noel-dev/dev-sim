@@ -7,23 +7,27 @@
 
 import Foundation
 
-enum PersonRole {
-    case productOwner
-    case developer
-    
-    var description: String {
-        switch self {
-            case .productOwner: return "Product Owner"
-            case .developer: return "Developer"
-        }
-    }
-}
-
 struct Person {
     let id: UUID = UUID()
     let role: PersonRole
     let name: Name
-    var weeklySalary: Currency? = 10
+
+    let salaryExpectationScalar = Double.random(in: 0.8...1.2)
+
+    let experience = Double.random(in: 0...1)
+    let speed = Double.random(in: 0...1)
+    let productKnowledge = Double.random(in: 0...0.1)
+
+    var salaryExpectation: Currency {
+        let baseline = 50.0
+        let experienceContribution = 20.0 * experience
+        let speedContribution = 20.0 * speed
+        let productKnowledgeContribution = 20.0 * productKnowledge
+        let expectation =
+            salaryExpectationScalar
+            * (baseline + experienceContribution + speedContribution + productKnowledgeContribution)
+        return Currency(floor(expectation))
+    }
 
     var fullName: String {
         name.full
