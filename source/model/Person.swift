@@ -6,23 +6,26 @@
 //
 
 import Foundation
+import GameplayKit
 
 struct Person {
     let id: UUID = UUID()
     let role: PersonRole
     let name: Name
 
-    let salaryExpectationScalar = Double.random(in: 0.8...1.2)
+    let colours: PersonColours
 
-    let experience = Double.random(in: 0...1)
-    let speed = Double.random(in: 0...1)
-    let productKnowledge = Double.random(in: 0...0.1)
+    let salaryExpectationScalar = Double(random(lowest: 60, highest: 140)) / 100.0
+
+    let experience = Double(random(lowest: 10, highest: 90)) / 100.0
+    let speed = Double(random(lowest: 10, highest: 90)) / 100.0
+    let productKnowledge = Double(random(lowest: 0, highest: 20)) / 100.0
 
     var salaryExpectation: Currency {
         let baseline = 50.0
-        let experienceContribution = 20.0 * experience
-        let speedContribution = 20.0 * speed
-        let productKnowledgeContribution = 20.0 * productKnowledge
+        let experienceContribution = 50.0 * experience
+        let speedContribution = 30.0 * speed
+        let productKnowledgeContribution = 30.0 * productKnowledge
         let expectation =
             salaryExpectationScalar
             * (baseline + experienceContribution + speedContribution + productKnowledgeContribution)
@@ -36,9 +39,17 @@ struct Person {
     init(role: PersonRole) {
         self.role = role
         self.name = Name.generate()
+        self.colours = PersonColours.random()
     }
 
     static func generate(numPeople: Int, withRole: PersonRole) -> [Person] {
         (0..<numPeople).map({ _ in .init(role: withRole) })
+    }
+
+    static func random(lowest: Int, highest: Int) -> Int {
+        let random = GKRandomSource()
+        let distribution = GKGaussianDistribution(
+            randomSource: random, lowestValue: lowest, highestValue: highest)
+        return distribution.nextInt()
     }
 }

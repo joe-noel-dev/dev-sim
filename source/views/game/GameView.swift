@@ -108,7 +108,7 @@ struct GameView: View {
                 FloatingButton {
                     Image("People")
                 }.sheet(isPresented: $peopleSheet) {
-                    PeopleSheet()
+                    PeopleSheet().environmentObject(store)
                 }
             }
         }

@@ -15,7 +15,7 @@ struct PersonListEntryView: View {
 
     var body: some View {
         HStack(spacing: displayUnits(2)) {
-            Circle().fill(Color.red)
+            PersonBlob(colours: person.colours)
                 .frame(width: displayUnits(6), height: displayUnits(6))
 
             VStack(alignment: .leading, spacing: 0) {

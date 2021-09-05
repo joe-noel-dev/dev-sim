@@ -38,7 +38,7 @@ struct OfficeView: View {
 
             ForEach(Array(store.state.game.staff.enumerated()), id: \.1.0.id) {
                 index, element in
-                PersonBlob()
+                PersonBlob(colours: element.0.colours)
                     .frame(width: Self.personWidth, height: Self.personWidth)
                     .offset(deskPosition(positionIndex: index))
             }
