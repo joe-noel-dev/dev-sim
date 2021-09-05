@@ -21,13 +21,14 @@ extension Color {
 
 struct PersonBlob: View {
     let colours: PersonColours
+    static let borderWidth: CGFloat = 2.0
 
     var body: some View {
         ZStack {
 
             background()
             gradient()
-            personBody().clipShape(Circle().inset(by: 2.0))
+            personBody().clipShape(Circle().inset(by: Self.borderWidth))
             personHead()
         }
     }
@@ -60,7 +61,7 @@ struct PersonBlob: View {
 
     func background() -> some View {
         Circle()
-            .strokeBorder(Color(personColour: colours.border), lineWidth: 2.0)
+            .strokeBorder(Color(personColour: colours.border), lineWidth: Self.borderWidth)
             .background(Circle().foregroundColor(Color(personColour: colours.background).opacity(0.7)))
                         
     }
