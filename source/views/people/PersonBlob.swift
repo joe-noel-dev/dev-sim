@@ -37,7 +37,7 @@ struct PersonBlob: View {
 
             Circle().fill(Color(personColour: colours.head))
                 .frame(
-                    width: 0.4 * metrics.size.width, height: 0.4 * metrics.size.height,
+                    width: 0.35 * metrics.size.width, height: 0.35 * metrics.size.height,
                     alignment: .center)
                     .position(x: 0.5 * metrics.size.width, y: 0.4 * metrics.size.height)
 
@@ -50,9 +50,9 @@ struct PersonBlob: View {
 
             Circle().fill(Color(personColour: colours.body))
                 .frame(
-                    width: 0.8 * metrics.size.width, height: 0.8 * metrics.size.height,
+                    width: 0.7 * metrics.size.width, height: 0.7 * metrics.size.height,
                     alignment: .center)
-                    .position(x: 0.5 * metrics.size.width, y: 0.9 * metrics.size.height)
+                    .position(x: 0.5 * metrics.size.width, y: 0.95 * metrics.size.height)
 
         }
 
