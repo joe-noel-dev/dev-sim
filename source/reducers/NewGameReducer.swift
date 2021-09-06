@@ -11,19 +11,14 @@ func newGameReducer(state: AppState) -> AppState {
     var state = state
     let game = Game()
 
-    let developer = Person(role: .developer)
-    game.addPerson(developer)
-    game.addStaffMember(developer.id)
+    let peopleToGenerate = [
+        (60, PersonRole.developer),
+        (20, PersonRole.productOwner),
+    ]
 
-    let po = Person(role: .productOwner)
-    game.addPerson(po)
-    game.addStaffMember(po.id)
-
-    (Person.generate(numPeople: 60, withRole: .developer)
-        + Person.generate(numPeople: 20, withRole: .productOwner))
-        .forEach({ person in
-            game.addPerson(person)
-        })
+    peopleToGenerate.map({ count, role in Person.generate(numPeople: count, withRole: role) })
+        .reduce([], { x, y in x + y })
+        .forEach({ person in game.addPerson(person) })
 
     game.addTransaction(
         Transaction(type: .loan, timestamp: game.date, amount: 10000, description: "Bank loan"))

@@ -32,15 +32,16 @@ struct PersonBlob: View {
             personHead()
         }
     }
-    
+
     func personHead() -> some View {
         GeometryReader { metrics in
 
             Circle().fill(Color(personColour: colours.head))
                 .frame(
                     width: 0.35 * metrics.size.width, height: 0.35 * metrics.size.height,
-                    alignment: .center)
-                    .position(x: 0.5 * metrics.size.width, y: 0.4 * metrics.size.height)
+                    alignment: .center
+                )
+                .position(x: 0.5 * metrics.size.width, y: 0.4 * metrics.size.height)
 
         }
     }
@@ -52,8 +53,9 @@ struct PersonBlob: View {
             Circle().fill(Color(personColour: colours.body))
                 .frame(
                     width: 0.7 * metrics.size.width, height: 0.7 * metrics.size.height,
-                    alignment: .center)
-                    .position(x: 0.5 * metrics.size.width, y: 0.95 * metrics.size.height)
+                    alignment: .center
+                )
+                .position(x: 0.5 * metrics.size.width, y: 0.95 * metrics.size.height)
 
         }
 
@@ -62,8 +64,9 @@ struct PersonBlob: View {
     func background() -> some View {
         Circle()
             .strokeBorder(Color(personColour: colours.border), lineWidth: Self.borderWidth)
-            .background(Circle().foregroundColor(Color(personColour: colours.background).opacity(0.7)))
-                        
+            .background(
+                Circle().foregroundColor(Color(personColour: colours.background).opacity(0.7)))
+
     }
 
     func gradient() -> some View {
